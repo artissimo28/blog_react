@@ -45,12 +45,10 @@ function Blog() {
 		if (post && post.userId) {
 			getUser(post.userId);
 		}
-	}, [post]);
-
-	useEffect(() => {
-		if (post && post.userId) {
+		if (post && post.id) {
+			getComments(post.id);
 		}
-	});
+	}, [post]);
 
 	return (
 		<>
