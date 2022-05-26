@@ -1,0 +1,13 @@
+.cover_image {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.author_container {
+    width: 100%;
+    background-color: rgb(180, 175, 175);
+    display: flex;
+    border-radius: 25px;
+}
