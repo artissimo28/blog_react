@@ -3,15 +3,15 @@ import { Container, Row, Button } from "reactstrap";
 import "./Wishlist.css";
 
 function Wishlist() {
-	const { posts, setPosts } = useState([]);
+	const [posts, setPosts] = useState([]);
 
 	const onDelete = (id) => {
 		const filteredArray = posts.filter((post) => {
 			return post.id !== id;
 		});
+		setPosts(filteredArray);
+		localStorage.setItem("postList", JSON.stringify(filteredArray));
 	};
-	setPosts(filteredArray);
-	localStorage.setItems("postList", JSON.stringify(filteredArray));
 
 	useEffect(() => {
 		const postListStorage = localStorage.getItem("postList");
@@ -34,7 +34,7 @@ function Wishlist() {
 									onClick={() => {
 										onDelete(post.id);
 									}}>
-									Sterge
+									Sterge!
 								</Button>
 							</div>
 						);
@@ -44,5 +44,4 @@ function Wishlist() {
 		</>
 	);
 }
-
 export default Wishlist;
